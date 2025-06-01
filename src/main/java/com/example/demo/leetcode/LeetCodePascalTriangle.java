@@ -16,7 +16,6 @@ public class LeetCodePascalTriangle {
             List<Integer> row = new ArrayList<>();
             int n = 1;
             for (int j = 0; j<=i; j++){
-                System.out.println("i, j > "+i+", "+j);
                 row.add(n);
                 if (i == 0)
                     continue;
