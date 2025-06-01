@@ -3,22 +3,22 @@ package com.example.demo.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeetCodePascalTriangle2 {
+public class LeetCodePascalTriangle3 {
     public static void main(String[] args) {
-        LeetCodePascalTriangle2 leetCodePascalTriangle2 = new LeetCodePascalTriangle2();
-        System.out.println(leetCodePascalTriangle2.generate(5));
+        LeetCodePascalTriangle3 leetCodePascalTriangle3 = new LeetCodePascalTriangle3();
+        System.out.println(leetCodePascalTriangle3.getRow(3));
     }
-
-    public List<List<Integer>> generate(int numRows) {
+    public List<Integer> getRow(int rowIndex) {
+        rowIndex = rowIndex+1;
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> curr = new ArrayList<>();
         curr.add(1);
         ans.add(new ArrayList<>(curr));
-        if(numRows == 1){
-            return ans;
+        if(rowIndex == 1){
+            return curr;
         }
 
-        for(int rows = 1;rows<numRows;rows++){
+        for(int rows = 1;rows<rowIndex;rows++){
             List<Integer> prev = curr;
             curr = new ArrayList<>();
             curr.add(1);
@@ -28,6 +28,6 @@ public class LeetCodePascalTriangle2 {
             curr.add(1);
             ans.add(new ArrayList<>(curr));
         }
-        return ans;
+        return curr;
     }
 }
